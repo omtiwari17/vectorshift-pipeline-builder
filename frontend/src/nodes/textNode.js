@@ -38,8 +38,11 @@ export const TextNode = ({ id, data }) => {
       {/* Textarea — auto resizes via rows */}
       <textarea
         value={currText}
-        onChange={(e) => setCurrText(e.target.value)}
-        rows={Math.max(2, currText.split('\n').length)}
+        onChange={(e) => {
+          setCurrText(e.target.value);
+          e.target.style.height = 'auto';
+          e.target.style.height = e.target.scrollHeight + 'px';
+        }}
         style={{
           width: '100%',
           backgroundColor: '#2d3748',
@@ -48,6 +51,8 @@ export const TextNode = ({ id, data }) => {
           borderRadius: '4px',
           padding: '4px',
           resize: 'none',
+          overflow: 'hidden',    // ← hides the scrollbar
+          minHeight: '40px',
           boxSizing: 'border-box',
           fontFamily: 'inherit'
         }}
