@@ -11,6 +11,12 @@ import { LLMNode } from './nodes/llmNode';
 import { OutputNode } from './nodes/outputNode';
 import { TextNode } from './nodes/textNode';
 
+import { APINode } from './nodes/apiNode';
+import { FilterNode } from './nodes/filterNode';
+import { NoteNode } from './nodes/noteNode';
+import { TransformNode } from './nodes/transformNode';
+import { TimerNode } from './nodes/timerNode';
+
 import 'reactflow/dist/style.css';
 
 const gridSize = 20;
@@ -20,6 +26,11 @@ const nodeTypes = {
   llm: LLMNode,
   customOutput: OutputNode,
   text: TextNode,
+  api: APINode,
+  filter: FilterNode,
+  note: NoteNode,
+  transform: TransformNode,
+  timer: TimerNode,
 };
 
 const selector = (state) => ({
